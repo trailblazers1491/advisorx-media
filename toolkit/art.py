@@ -69,6 +69,7 @@ STYLES = {
     "mum":     dict(shirt=(240, 128, 150), hair=(60, 40, 40), hairstyle="bob"),
     "advisor": dict(shirt=WHITE, hair=(30, 30, 40), hairstyle="side", suit=NAVY, tie=GOLD, glasses=True),
     "alex":    dict(shirt=WHITE, hair=(30, 30, 40), hairstyle="side", suit=(28, 28, 32), tie=(18, 18, 22), glasses=True),
+    "kid":     dict(shirt=(255, 196, 70), hair=(50, 36, 36), hairstyle="bob"),
     "uncle":   dict(shirt=(120, 190, 140), hair=(170, 170, 175), hairstyle="bald", glasses=True),
 }
 
