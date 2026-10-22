@@ -83,7 +83,7 @@ Same text, "Comment the number 👇", "Link in bio" instead of the WhatsApp link
 ---
 
 ## 4) Sat 31 Oct – Mini-drama (Chinese, 43s) 还没到25号，薪水就没了？
-Platforms: Facebook, Instagram, YouTube Shorts
+Platforms: Facebook, Instagram, YouTube Shorts, LinkedIn
 YouTube title: 还没到25号，薪水就没了？兼职理财规划 #Shorts
 
 ### Caption
