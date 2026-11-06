@@ -13,7 +13,6 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 TOOLKIT = os.path.join(HERE, "..", "..", "toolkit")
 sys.path.insert(0, TOOLKIT)
 import art
-import aina as AinaMod
 
 W, H = 1080, 1350
 DARK = (7, 16, 11)
@@ -221,8 +220,14 @@ def mon_slide1():
     im.alpha_composite(sub, (56, 380 + head.height + 36))
     pill = filled_pill("Swipe", arrow=True)
     im.alpha_composite(pill, (56, H - pill.height - 60))
-    char = AinaMod.aina_with_prop_text("worried", "THIS MONTH'S\nRAISE", "RM0", scale=1.05)
-    im.alpha_composite(char, (W - char.width - 10, H - char.height - 40))
+    raise_card = Image.new("RGBA", (300, 150), (0, 0, 0, 0))
+    rd = ImageDraw.Draw(raise_card)
+    rd.rounded_rectangle([0, 0, 280, 130], 22, fill=(7, 16, 11, 235), outline=(200, 60, 50), width=4)
+    rc_lab = art.text_img("THIS MONTH'S\nRAISE", 22, (210, 225, 218), width=240, w="Bold")
+    rc_amt = art.text_img("RM0", 46, (230, 90, 80), width=240, w="Black")
+    raise_card.alpha_composite(rc_lab, (24, 18))
+    raise_card.alpha_composite(rc_amt, (24, 70))
+    im.alpha_composite(art.shadowed(raise_card, 6, 12, 80), (W - 340, H - 230))
     save(im, "wk2_mon_01.jpg")
 
 
@@ -353,8 +358,6 @@ def mon_slide5():
         row = benefit_row(640, n, t, s, style=style)
         im.alpha_composite(row, (56, y))
         y += row.height + 20
-    char = AinaMod.aina("happy", scale=1.05)
-    im.alpha_composite(char, (W - char.width + 20, H - char.height - 10))
     save(im, "wk2_mon_05.jpg")
 
 
@@ -369,8 +372,6 @@ def cta_slide(idx, total, out_name, headline, sub):
     im.alpha_composite(wa, (56, 420 + head.height + 26 + sub_im.height + 40))
     note = art.text_img("Link in caption · Save & share with a friend", 24, (4, 70, 28), width=700, w="Bold")
     im.alpha_composite(note, (56, 420 + head.height + 26 + sub_im.height + 40 + wa.height + 24))
-    char = AinaMod.aina_idea(scale=1.0)
-    im.alpha_composite(char, (W - char.width + 10, H - char.height - 10))
     save(im, out_name)
 
 
@@ -395,8 +396,6 @@ def fri_slide1():
     im.alpha_composite(sub, (56, 380 + head.height + 30))
     pill = filled_pill("Count how many fit you", arrow=True)
     im.alpha_composite(pill, (56, H - pill.height - 60))
-    char = AinaMod.aina("shocked", scale=1.05)
-    im.alpha_composite(char, (W - char.width - 10, H - char.height - 40))
     save(im, "wk2_fri_01.jpg")
 
 
@@ -454,8 +453,6 @@ def fri_slide5():
         row = benefit_row(640, n, t, s, style=style)
         im.alpha_composite(row, (56, y))
         y += row.height + 20
-    char = AinaMod.aina("happy", scale=1.05)
-    im.alpha_composite(char, (W - char.width + 20, H - char.height - 10))
     save(im, "wk2_fri_05.jpg")
 
 
